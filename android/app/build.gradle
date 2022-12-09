@@ -51,6 +51,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion > 28 ? flutter.targetSdkVersion : flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
