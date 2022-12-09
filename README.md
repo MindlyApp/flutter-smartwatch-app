@@ -1,5 +1,7 @@
 # mindstreamers_smartwatch_app
 
+[![Codemagic build status](https://api.codemagic.io/apps/6392ae5ff0997297cf87a0cd/6392ae5ff0997297cf87a0cc/status_badge.svg)](https://codemagic.io/apps/6392ae5ff0997297cf87a0cd/6392ae5ff0997297cf87a0cc/latest_build)
+
 The official smartwatch app for the Mind Programming (Mindstreamers).
 
 ## Getting Started
