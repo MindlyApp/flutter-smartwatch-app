@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wear/wear.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen() : super();
+  const SplashScreen({super.key}) : super();
 
   @override
   Widget build(BuildContext context) {

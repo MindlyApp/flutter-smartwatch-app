@@ -1,5 +1,5 @@
+import 'package:mind_pro/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_smartwatch_app/presentation/splash_screen.dart';
 // import 'package:wear/wear.dart';
 
 void main() {
