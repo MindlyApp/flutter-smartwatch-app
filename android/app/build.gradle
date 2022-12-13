@@ -25,16 +25,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-buildFeatures {
-    viewBinding true
-}
-
 android {
     compileSdkVersion 23
     ndkVersion flutter.ndkVersion
 
     buildFeatures {
-        viewBinding true
+        viewBinding = true
     }
 
     compileOptions {
