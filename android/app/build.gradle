@@ -25,18 +25,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+buildFeatures {
+    viewBinding true
+}
+
 android {
     compileSdkVersion 23
     ndkVersion flutter.ndkVersion
+
+    buildFeatures {
+        viewBinding true
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    /* kotlinOptions {
+    kotlinOptions {
         jvmTarget = '1.8'
-    } */
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -51,7 +59,7 @@ android {
         targetSdkVersion 23
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        /* multiDexEnabled true */
+        multiDexEnabled true
     }
 
     buildTypes {
