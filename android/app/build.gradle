@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion flutter.compileSdkVersion > 23 ? flutter.compileSdkVersion : 23
+    compileSdkVersion 23
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -51,7 +51,7 @@ android {
         targetSdkVersion 23
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true
+        /* multiDexEnabled true */
     }
 
     buildTypes {
