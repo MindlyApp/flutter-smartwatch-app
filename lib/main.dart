@@ -1,8 +1,12 @@
 import 'package:mind_pro/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:wear/wear.dart';
 
 void main() {
+  // load shared preferences
+  SharedPreferences.getInstance();
+
   runApp(const MyApp());
 }
 
