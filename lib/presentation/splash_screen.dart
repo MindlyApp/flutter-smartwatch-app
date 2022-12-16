@@ -7,19 +7,46 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0x2C1E47FF),
+      ),
       home: Scaffold(
         body: Center(
           child: WatchShape(
             builder: (BuildContext context, WearShape shape, Widget? child) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
+              double screenWidth = MediaQuery.of(context).size.width;
+              double screenHeight = MediaQuery.of(context).size.height;
+
+              return Stack(
+                  /*decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/gradient_bg.png"),
+                        fit: BoxFit.fill),
+                  ),*/
+                  children: <Widget>[
+                    /*Positioned.fill(
+                      child: Image(
+                        image: AssetImage('assets/gradient_bg.png'),
+                        fit: BoxFit.none,
+                        width: screenWidth,
+                        height: screenHeight,
+                      ),
+                    ),*/
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        /*Text(
                     'Shape: ${shape == WearShape.round ? 'round' : 'square'}',
-                  ),
-                  child!,
-                ],
-              );
+                  ),*/
+                        Image.asset(
+                          "assets/logo_neu.png",
+                          width: screenWidth - 50,
+                          height: screenHeight - 50,
+                        ),
+                        //child!,
+                      ],
+                    )
+                  ]);
             },
             child: AmbientMode(
               builder: (BuildContext context, WearMode mode, Widget? child) {
