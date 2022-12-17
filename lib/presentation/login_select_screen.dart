@@ -14,7 +14,7 @@ class LoginSelectScreen extends StatelessWidget {
             // goto other screen
             Navigator.pushNamed(context, '/main-menu');
           }
-        });
+        }());
 
     return Container();
   }
