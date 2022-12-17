@@ -13,6 +13,11 @@ class SplashScreen extends StatelessWidget {
             double screenWidth = MediaQuery.of(context).size.width;
             double screenHeight = MediaQuery.of(context).size.height;
 
+            // after 1,5 seconds goto login screen, see AD-25
+            Future.delayed(const Duration(milliseconds: 1500), () {
+              Navigator.pushNamed(context, '/login');
+            });
+
             return Stack(
                 /*decoration: const BoxDecoration(
                     image: DecorationImage(
