@@ -38,7 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   wear: ^1.1.0
   flutter_launcher_icons: ^0.11.0
-  shared_preferences: ^0.5.5
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

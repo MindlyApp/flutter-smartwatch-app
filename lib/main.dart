@@ -1,12 +1,10 @@
 import 'package:mind_pro/presentation/my_router_app.dart';
-import 'package:mind_pro/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:wear/wear.dart';
 
 void main() {
   // load shared preferences
-  SharedPreferences.getInstance();
+  // SharedPreferences.getInstance();
 
   runApp(const MyApp());
 }
@@ -17,6 +15,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SharedPreferences.getInstance();
+
     return MaterialApp(
       title: 'Mind Programming',
       theme: ThemeData(
