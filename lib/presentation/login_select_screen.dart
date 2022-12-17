@@ -8,12 +8,12 @@ class LoginSelectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // check, if the user is already logged in, see AD-23
-    SharedPreferences.getInstance().then((value) => {
-          if (value.containsKey(Const.sharedPrefJWTTokenName))
-            {
-              // user is already logged in, because he has a JWT token from the backend
-              // TODO: goto other screen
-            }
+    SharedPreferences.getInstance().then((value) => () {
+          if (value.containsKey(Const.sharedPrefJWTTokenName)) {
+            // user is already logged in, because he has a JWT token from the backend
+            // goto other screen
+            Navigator.pushNamed(context, '/main-menu');
+          }
         });
 
     return Container();
