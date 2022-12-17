@@ -12,6 +12,8 @@ class MyRouterApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0x2C1E47FF),
       ),
+
+      /// see also: https://docs.flutter.dev/cookbook/navigation/named-routes
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
