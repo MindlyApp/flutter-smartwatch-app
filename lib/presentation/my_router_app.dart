@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_pro/presentation/login_select_screen.dart';
 import 'package:mind_pro/presentation/splash_screen.dart';
 import 'package:wear/wear.dart';
 
@@ -19,6 +20,7 @@ class MyRouterApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         //'/second': (context) => const SecondScreen(),
+        '/login': (context) => const LoginSelectScreen(),
       },
     );
   }
