@@ -61,7 +61,7 @@ class LoginSelectScreen extends StatelessWidget {
                     // <-- ElevatedButton
                     onPressed: () {},
 
-                    /// style: MSBackgrounds.createButtonStyle(context),
+                    style: MSBackgrounds.createButtonStyle(context),
                     icon: const Icon(
                       Icons.qr_code_2,
                       size: 24.0,
