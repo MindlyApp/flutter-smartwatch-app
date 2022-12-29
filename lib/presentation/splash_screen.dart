@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:wear/wear.dart';
+import 'dart:async';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key}) : super();
+class SplashScreen extends StatefulWidget {
+  SplashScreen({super.key}) : super();
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  late Timer _timer;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +22,7 @@ class SplashScreen extends StatelessWidget {
             double screenHeight = MediaQuery.of(context).size.height;
 
             // after 1,5 seconds goto login screen, see AD-25
-            Future.delayed(const Duration(milliseconds: 1500), () {
+            _timer = Timer(const Duration(milliseconds: 1500), () {
               Navigator.pushNamed(context, '/login');
             });
 
@@ -59,5 +67,14 @@ class SplashScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    if (_timer != null) {
+      _timer.cancel();
+    }
+
+    super.dispose();
   }
 }

@@ -17,7 +17,7 @@ class MyRouterApp extends StatelessWidget {
       /// see also: https://docs.flutter.dev/cookbook/navigation/named-routes
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
+        '/': (context) => SplashScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         //'/second': (context) => const SecondScreen(),
         '/login': (context) => const LoginSelectScreen(),
