@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "556134750333",
+    "project_id": "emotivate-c06b1",
+    "storage_bucket": "emotivate-c06b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556134750333:android:24af47806f71baf991b914",
+        "android_client_info": {
+          "package_name": "io.mindstreamers.flutter_smartwatch_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556134750333-h4756rpn1enl00ckh6jik12larghd9r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUrqn44UEefNFguaO4CngNKsH1J_iigqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556134750333-h4756rpn1enl00ckh6jik12larghd9r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
