@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mind_pro/const.dart';
+import 'package:mind_pro/presentation/background/background_builder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wear/wear.dart';
 
@@ -21,25 +22,17 @@ class LoginSelectScreen extends StatelessWidget {
       body: Center(
           child: WatchShape(
         builder: (BuildContext context, WearShape shape, Widget? child) {
-          double screenWidth = MediaQuery.of(context).size.width;
-          double screenHeight = MediaQuery.of(context).size.height;
+          /// double screenWidth = MediaQuery.of(context).size.width;
+          /// double screenHeight = MediaQuery.of(context).size.height;
 
           return Container(
             /// see also: https://www.digitalocean.com/community/tutorials/flutter-flutter-gradient
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF160068),
-                Color(0xFFFB04FC),
-              ],
-            )),
+            decoration: MSBackgrounds.createBoxDecoration(),
             child: const Center(
               child: Text(
                 'Hello Gradient!',
                 style: TextStyle(
-                  fontSize: 48.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
