@@ -19,7 +19,9 @@ class MSBackgrounds {
     return MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.pressed)) {
-          return Theme.of(context).colorScheme.primary.withOpacity(0.5);
+          return const Color(0xFFFB04FC);
+
+          /// return Theme.of(context).colorScheme.primary.withOpacity(0.5);
         } else {
           return const Color(0xFFFB04FC);
         }
