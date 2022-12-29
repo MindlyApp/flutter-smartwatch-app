@@ -3,7 +3,7 @@ import 'package:wear/wear.dart';
 import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key}) : super();
+  const SplashScreen({super.key}) : super();
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -71,10 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void dispose() {
-    if (_timer != null) {
-      _timer.cancel();
-    }
-
+    _timer.cancel();
     super.dispose();
   }
 }
