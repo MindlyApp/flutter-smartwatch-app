@@ -25,9 +25,6 @@ class MSBackgrounds {
         } else {
           return const Color(0xFFFB04FC);
         }
-
-        /// fallback to default button color
-        return null; // Use the component's default.
       },
     );
   }
