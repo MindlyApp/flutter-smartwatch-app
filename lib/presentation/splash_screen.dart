@@ -13,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   late Timer _timer;
+  bool _timerStarted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Navigator.pushNamedAndRemoveUntil(
                   context, '/login', ModalRoute.withName('/login'));
             });
+            _timerStarted = true;
           }
 
           // Otherwise, show something whilst waiting for initialization to complete
@@ -93,7 +95,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void dispose() {
-    _timer.cancel();
+    if (_timerStarted) {
+      _timer.cancel();
+    }
+
     super.dispose();
   }
 }
