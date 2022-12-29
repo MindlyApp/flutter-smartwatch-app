@@ -50,6 +50,7 @@ class LoginSelectScreen extends StatelessWidget {
                   ElevatedButton.icon(
                     // <-- ElevatedButton
                     onPressed: () {},
+                    style: MSBackgrounds.createButtonStyle(context),
                     icon: const Icon(
                       Icons.keyboard,
                       size: 24.0,
@@ -59,6 +60,8 @@ class LoginSelectScreen extends StatelessWidget {
                   ElevatedButton.icon(
                     // <-- ElevatedButton
                     onPressed: () {},
+
+                    /// style: MSBackgrounds.createButtonStyle(context),
                     icon: const Icon(
                       Icons.qr_code_2,
                       size: 24.0,
