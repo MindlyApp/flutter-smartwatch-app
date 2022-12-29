@@ -1,5 +1,7 @@
 # flutter_smartwatch_app
 
+https://codemagic.io/builds
+
 A new Flutter project.
 
 ## Getting Started
