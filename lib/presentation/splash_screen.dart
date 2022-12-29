@@ -23,7 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
             // after 1,5 seconds goto login screen, see AD-25
             _timer = Timer(const Duration(milliseconds: 1500), () {
-              Navigator.pushNamed(context, '/login');
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/login', ModalRoute.withName('/login'));
             });
 
             return Stack(
