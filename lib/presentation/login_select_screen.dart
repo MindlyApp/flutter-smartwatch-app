@@ -28,14 +28,44 @@ class LoginSelectScreen extends StatelessWidget {
           return Container(
             /// see also: https://www.digitalocean.com/community/tutorials/flutter-flutter-gradient
             decoration: MSBackgrounds.createBoxDecoration(),
-            child: const Center(
-              child: Text(
-                'Hello Gradient!',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+            child: Center(
+              child: Column(
+                /// center the column
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Login Method',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    height: 8,
+                  ),
+
+                  /// see aslo: https://www.flutterbeads.com/button-with-icon-and-text-flutter/
+                  ElevatedButton.icon(
+                    // <-- ElevatedButton
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.keyboard,
+                      size: 24.0,
+                    ),
+                    label: const Text('Keyboard'),
+                  ),
+                  ElevatedButton.icon(
+                    // <-- ElevatedButton
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.qr_code_2,
+                      size: 24.0,
+                    ),
+                    label: const Text('QR Code'),
+                  ),
+                ],
               ),
             ),
           );
