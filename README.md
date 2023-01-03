@@ -25,3 +25,8 @@ Then execute these commands:
 flutter pub get
 flutter pub run flutter_launcher_icons
 ```
+
+## Splash Screen
+
+https://pub.dev/packages/flutter_native_splash
+
