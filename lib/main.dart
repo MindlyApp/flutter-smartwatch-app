@@ -2,9 +2,11 @@ import 'package:mind_pro/presentation/my_router_app.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
   // load shared preferences
   // SharedPreferences.getInstance();
+
+  WidgetsFlutterBinding.ensureInitialized();
 
   runApp(const MyApp());
 }
