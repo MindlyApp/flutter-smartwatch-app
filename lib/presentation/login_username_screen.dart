@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:mind_pro/presentation/background/background_builder.dart';
 import 'package:wear/wear.dart';
 
@@ -10,7 +11,26 @@ class LoginUsernameScreen extends StatefulWidget {
 }
 
 class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
-  GlobalKey _formkey = GlobalKey();
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
+  //
+  // Note: This is a `GlobalKey<FormState>`,
+  // not a GlobalKey<MyCustomFormState>.
+  //
+  // See also: https://docs.flutter.dev/cookbook/forms/validation
+  final _formKey = GlobalKey<FormState>();
+
+  String? validatePassword(String value) {
+    if (value.isEmpty) {
+      return "* Required";
+    } else if (value.length < 8) {
+      return "Password should be atleast 8 characters";
+    } else if (value.length > 32) {
+      return "Password should not be greater than 32 characters";
+    } else {
+      return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +43,10 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
           return Container(
             decoration: MSBackgrounds.createBoxDecoration(),
             child: SingleChildScrollView(
+                child: Form(
+              autovalidateMode:
+                  AutovalidateMode.always, //check for validation while typing
+              key: _formKey,
               child: Column(
                 children: [
                   const SizedBox(
@@ -43,35 +67,43 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                       width: screenWidth - 50,
                       child: Column(
                         children: [
+                          /// see also: https://medium.com/swlh/forms-and-validation-in-flutter-login-ui-f2e7db4e00c9
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 0),
+                            padding: const EdgeInsets.symmetric(horizontal: 0),
                             child: TextFormField(
+                                decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Email',
+                                    hintText:
+                                        'Enter valid email id as abc@gmail.com'),
+                                validator: MultiValidator([
+                                  RequiredValidator(errorText: "* Required"),
+                                  EmailValidator(
+                                      errorText: "Enter valid email id"),
+                                ])),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 0, right: 0, top: 10, bottom: 0),
+                            child: TextFormField(
+                              obscureText: true,
                               decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
                                   labelText: 'Password',
                                   hintText: 'Enter secure password'),
+                              validator: MultiValidator([
+                                RequiredValidator(errorText: "* Required"),
+                                MinLengthValidator(8,
+                                    errorText:
+                                        "Password should be atleast 8 characters"),
+                                MaxLengthValidator(32,
+                                    errorText:
+                                        "Password should not be greater than 32 characters")
+                              ]),
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.all(10),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'User Name',
-                                  hintText:
-                                      'Enter valid mail id as abc@gmail.com'),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(10),
-                            child: TextField(
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Password',
-                                  hintText: 'Enter your secure password'),
-                            ),
+                          const SizedBox(
+                            height: 0,
                           ),
                         ],
                       )),
@@ -79,7 +111,17 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                   /// see aslo: https://www.flutterbeads.com/button-with-icon-and-text-flutter/
                   ElevatedButton.icon(
                     // <-- ElevatedButton
-                    onPressed: () {},
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        /// TODO: login
+
+                        Navigator.pushNamed(context, '/main-menu');
+
+                        print("Login successful");
+                      } else {
+                        print("Not Validated");
+                      }
+                    },
 
                     style: MSBackgrounds.createButtonStyle(context),
                     icon: const Icon(
@@ -88,9 +130,12 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                     ),
                     label: const Text('Login'),
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
-            ),
+            )),
           );
         },
         child: AmbientMode(
