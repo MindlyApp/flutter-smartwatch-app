@@ -24,7 +24,7 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
     if (value.isEmpty) {
       return "* Required";
     } else if (value.length < 8) {
-      return "Password should be atleast 8 characters";
+      return "Password should be at least 8 characters";
     } else if (value.length > 32) {
       return "Password should not be greater than 32 characters";
     } else {
@@ -71,11 +71,14 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 0),
                             child: TextFormField(
+                                keyboardType: TextInputType.emailAddress,
                                 decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
                                     labelText: 'Email',
                                     hintText:
-                                        'Enter valid email id as abc@gmail.com'),
+                                        'Enter valid email id as abc@gmail.com',
+                                    filled: true,
+                                    fillColor: Color(0x22FFFFFF)),
                                 validator: MultiValidator([
                                   RequiredValidator(errorText: "* Required"),
                                   EmailValidator(
@@ -87,15 +90,19 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                                 left: 0, right: 0, top: 10, bottom: 0),
                             child: TextFormField(
                               obscureText: true,
+                              enableSuggestions: false,
                               decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Password',
-                                  hintText: 'Enter secure password'),
+                                border: OutlineInputBorder(),
+                                labelText: 'Password',
+                                hintText: 'Enter secure password',
+                                filled: true,
+                                fillColor: Color(0x22FFFFFF),
+                              ),
                               validator: MultiValidator([
                                 RequiredValidator(errorText: "* Required"),
                                 MinLengthValidator(8,
                                     errorText:
-                                        "Password should be atleast 8 characters"),
+                                        "Password should be at least 8 characters"),
                                 MaxLengthValidator(32,
                                     errorText:
                                         "Password should not be greater than 32 characters")
@@ -115,7 +122,8 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                       if (_formKey.currentState!.validate()) {
                         /// TODO: login
 
-                        Navigator.pushNamed(context, '/main-menu');
+                        Navigator.pushNamedAndRemoveUntil(context, '/main-menu',
+                            ModalRoute.withName('/main-menu'));
 
                         print("Login successful");
                       } else {
