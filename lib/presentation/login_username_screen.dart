@@ -20,18 +20,14 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
       body: Center(
           child: WatchShape(
         builder: (BuildContext context, WearShape shape, Widget? child) {
-          /// double screenWidth = MediaQuery.of(context).size.width;
-          /// double screenHeight = MediaQuery.of(context).size.height;
-
           return Container(
-            /// see also: https://www.digitalocean.com/community/tutorials/flutter-flutter-gradient
             decoration: MSBackgrounds.createBoxDecoration(),
-            child: Center(
+            child: SingleChildScrollView(
               child: Column(
-                /// center the column
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
                   const Text(
                     'Login',
                     style: TextStyle(
@@ -43,7 +39,7 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                   Container(
                     height: 8,
                   ),
-                  Container(
+                  SizedBox(
                       width: screenWidth - 50,
                       child: Column(
                         children: [
