@@ -77,6 +77,8 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                                     labelText: 'Email',
                                     hintText:
                                         'Enter valid email id as abc@gmail.com',
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: 0, horizontal: 5),
                                     filled: true,
                                     fillColor: Color(0x22FFFFFF)),
                                 validator: MultiValidator([
@@ -95,6 +97,8 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                                 border: OutlineInputBorder(),
                                 labelText: 'Password',
                                 hintText: 'Enter secure password',
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 0, horizontal: 5),
                                 filled: true,
                                 fillColor: Color(0x22FFFFFF),
                               ),
