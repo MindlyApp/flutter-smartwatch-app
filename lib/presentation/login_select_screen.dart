@@ -49,7 +49,9 @@ class LoginSelectScreen extends StatelessWidget {
                   /// see aslo: https://www.flutterbeads.com/button-with-icon-and-text-flutter/
                   ElevatedButton.icon(
                     // <-- ElevatedButton
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login/username');
+                    },
                     style: MSBackgrounds.createButtonStyle(context),
                     icon: const Icon(
                       Icons.keyboard,

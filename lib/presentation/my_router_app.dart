@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mind_pro/presentation/login_select_screen.dart';
+import 'package:mind_pro/presentation/login_username_screen.dart';
 import 'package:mind_pro/presentation/mainmenu/mainmenu.dart';
 import 'package:mind_pro/presentation/splash_screen.dart';
 
@@ -22,6 +23,7 @@ class MyRouterApp extends StatelessWidget {
         //'/second': (context) => const SecondScreen(),
         '/login': (context) => const LoginSelectScreen(),
         '/main-menu': (context) => const MainMenuScreen(),
+        '/login/username': (context) => const LoginUsernameScreen(),
       },
     );
   }

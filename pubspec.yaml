@@ -50,6 +50,7 @@ dependencies:
   firebase_messaging: ^14.2.1
   firebase_core: ^2.4.1
   flutter_native_splash: ^2.2.16
+  form_field_validator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
