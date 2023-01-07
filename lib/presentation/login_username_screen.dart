@@ -129,9 +129,9 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                         Navigator.pushNamedAndRemoveUntil(context, '/main-menu',
                             ModalRoute.withName('/main-menu'));
 
-                        print("Login successful");
+                        /// print("Login successful");
                       } else {
-                        print("Not Validated");
+                        /// print("Not Validated");
                       }
                     },
 
