@@ -143,8 +143,18 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                     label: const Text('Login'),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 20),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login/reset-password');
+                    },
+                    child: const Text('Reset Password'),
+                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
             )),

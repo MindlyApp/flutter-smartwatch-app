@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_pro/presentation/login/reset_password_screen.dart';
 import 'package:mind_pro/presentation/login_select_screen.dart';
 import 'package:mind_pro/presentation/login_username_screen.dart';
 import 'package:mind_pro/presentation/mainmenu/mainmenu.dart';
@@ -24,6 +25,7 @@ class MyRouterApp extends StatelessWidget {
         '/login': (context) => const LoginSelectScreen(),
         '/main-menu': (context) => const MainMenuScreen(),
         '/login/username': (context) => const LoginUsernameScreen(),
+        '/login/reset-password': (context) => const ResetPasswordScreen(),
       },
     );
   }
