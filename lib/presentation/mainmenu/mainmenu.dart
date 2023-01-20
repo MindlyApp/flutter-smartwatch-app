@@ -60,10 +60,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
     return Column(
       children: [
         buildMenuEntry("Training 1", Icons.people, "/product/relaxation"),
-        buildMenuEntry("Relaxation", Icons.people, "/product/relaxation"),
-        SizedBox(
-          height: 10,
-        ),
+        /// buildMenuEntry("Relaxation", Icons.people, "/product/relaxation"),
         buildMenuEntry("Privacy", Icons.people, "/product/relaxation"),
         buildMenuEntry("Imprint", Icons.people, "/product/relaxation"),
         buildMenuEntry("Logout", Icons.people, "/login/logout"),

@@ -35,9 +35,18 @@ class MSBackgrounds {
     );
   }
 
+  static MaterialStateProperty<Color?>? createMainMenuButtonBackground(
+      BuildContext context) {
+    return MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+            return const Color(0x00FB04FC);
+      },
+    );
+  }
+
   static ButtonStyle createMainMenuButtonStyle(BuildContext context) {
     return ButtonStyle(
-      backgroundColor: MSBackgrounds.createButtonBackground(context),
+      backgroundColor: MSBackgrounds.createMainMenuButtonBackground(context),
     );
   }
 }
