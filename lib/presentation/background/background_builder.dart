@@ -34,4 +34,10 @@ class MSBackgrounds {
       backgroundColor: MSBackgrounds.createButtonBackground(context),
     );
   }
+
+  static ButtonStyle createMainMenuButtonStyle(BuildContext context) {
+    return ButtonStyle(
+      backgroundColor: MSBackgrounds.createButtonBackground(context),
+    );
+  }
 }
