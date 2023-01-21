@@ -23,7 +23,7 @@ class LoginUseCases {
       /// see also: https://pub.dev/packages/jwt_decoder/example
 
       /* decode() method will decode your token's payload */
-      Map<String, dynamic> decodedToken = JwtDecoder.decode(token);
+      /// Map<String, dynamic> decodedToken = JwtDecoder.decode(token);
 
       /// check, if the JWT token is still valid
       bool isTokenExpired = JwtDecoder.isExpired(token);
