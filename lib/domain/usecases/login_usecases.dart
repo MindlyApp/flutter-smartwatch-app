@@ -39,4 +39,9 @@ class LoginUseCases {
     return false;
   }
 
+  /// Logout the current user.
+  Future<void> logout() async {
+    sharedPreferences.remove(jwtTokenPrefsName);
+  }
+
 }
