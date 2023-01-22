@@ -9,7 +9,7 @@ Future<void> init() async {
   // Register our database first.
 
   // load shared preferences
-  sl.registerSingletonAsync<SharedPreferences>(() => SharedPreferences.getInstance());
+  await _initSharedPref();
 
   /// BLOCS
 
@@ -34,4 +34,9 @@ Future<void> init() async {
 
   /// extern
   sl.registerLazySingleton(() => http.Client());
+}
+
+Future<void> _initSharedPref() async {
+  SharedPreferences sharedPref = await SharedPreferences.getInstance();
+  sl.registerSingleton<SharedPreferences>(sharedPref);
 }

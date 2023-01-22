@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mind_pro/domain/usecases/login_usecases.dart';
 import 'package:wear/wear.dart';
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,15 +17,21 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   late Timer _timer;
   bool _timerStarted = false;
+  late int startTime;
 
   @override
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
 
+    startTime = DateTime.now().millisecondsSinceEpoch;
+
     return FutureBuilder(
-        future: Firebase.initializeApp(
+        future: Future.wait<dynamic>([Firebase.initializeApp(
           options: DefaultFirebaseOptions.currentPlatform,
         ),
+          GetIt.I.allReady(timeout: const Duration(seconds: 3)),
+          GetIt.I.get<LoginUseCases>().isLoggedIn()
+        ]),
         builder: (context, snapshot) {
           // Check for errors
           if (snapshot.hasError) {
@@ -32,10 +40,28 @@ class _SplashScreenState extends State<SplashScreen> {
 
           // Once complete, show your application
           if (snapshot.connectionState == ConnectionState.done) {
+            /// calculate the remaining time, so that the splash screen is shown
+            /// not more than 1.5 seconds
+            int endTime = DateTime.now().millisecondsSinceEpoch;
+            int timeDiff = endTime - startTime;
+            int timerTime = 1500 - timeDiff;
+
+            // the timer time cannot be negative
+            if (timerTime < 1) {
+              timerTime = 1;
+            }
+
             // after 1,5 seconds goto login screen, see AD-25
-            _timer = Timer(const Duration(milliseconds: 1500), () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/login', ModalRoute.withName('/login'));
+            _timer = Timer(Duration(milliseconds: timerTime), () {
+              /// GetIt.I.get<LoginUseCases>().isLoggedIn()
+              bool loggedIn = snapshot.data![2];
+              if (loggedIn == true) {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/main-menu', ModalRoute.withName('/main-menu'));
+              } else {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/login', ModalRoute.withName('/login'));
+              }
             });
             _timerStarted = true;
           }
