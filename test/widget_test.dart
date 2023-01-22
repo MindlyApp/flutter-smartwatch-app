@@ -12,14 +12,17 @@ import 'package:mind_pro/domain/usecases/login_usecases.dart';
 
 import 'package:mind_pro/main.dart';
 import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
 import 'widget_test.mocks.dart';
 
 @GenerateMocks([LoginUseCases])
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    final loginUseCasesMock = MockLoginUseCases();
-    GetIt.I.registerSingleton<LoginUseCases>(loginUseCasesMock);
+    final mockloginUseCases = MockLoginUseCases();
+    when(mockloginUseCases.isLoggedIn()).thenAnswer((_) => Future<bool>.value(false));
+
+    GetIt.I.registerSingleton<LoginUseCases>(mockloginUseCases);
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
