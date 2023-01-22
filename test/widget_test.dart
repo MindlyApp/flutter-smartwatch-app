@@ -7,11 +7,20 @@
 
 /// import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mind_pro/domain/usecases/login_usecases.dart';
 
 import 'package:mind_pro/main.dart';
+import 'package:mockito/annotations.dart';
 
+import 'widget_test.mocks.dart';
+
+@GenerateMocks([LoginUseCases])
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    final loginUseCasesMock = MockLoginUseCases();
+    GetIt.I.registerSingleton<LoginUseCases>(loginUseCasesMock);
+
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
