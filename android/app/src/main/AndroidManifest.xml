@@ -1,6 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.mindstreamers.flutter_smartwatch_app">
-   <application
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+    <application
         android:label="flutter_smartwatch_app"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
