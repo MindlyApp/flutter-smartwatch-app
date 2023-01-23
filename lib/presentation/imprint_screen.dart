@@ -136,7 +136,7 @@ Copyright laws of third parties are respected as long as the contents on these w
     );
   }
 
-  @deprecated
+  @Deprecated('This method is currently not used')
   /// @deprecated
   void openBrowser() async {
     if (await canLaunchUrl(_url)){

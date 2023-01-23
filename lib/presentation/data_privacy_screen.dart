@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mind_pro/presentation/background/background_builder.dart';
 import 'package:wear/wear.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class DataPrivacyScreen extends StatefulWidget {
   const DataPrivacyScreen({Key? key}) : super(key: key);
