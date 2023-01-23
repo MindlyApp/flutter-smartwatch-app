@@ -66,7 +66,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
         buildMenuEntry("Privacy", Icons.privacy_tip, "/info/data-privacy"),
         buildMenuEntry("Imprint", Icons.info, "/info/imprint"),
         buildMenuEntry("Logout", Icons.logout, "/login", () async {
-          print('Logout');
+          /// print('Logout');
           await GetIt.I.get<LoginUseCases>().logout();
         }),
       ],
@@ -79,7 +79,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
       // <-- ElevatedButton
       onPressed: () {
         if (callback != null) {
-          callback!.call();
+          callback.call();
         }
 
         Navigator.pushNamed(context, targetScreenPath);
