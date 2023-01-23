@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_pro/presentation/data_privacy_screen.dart';
 import 'package:mind_pro/presentation/imprint_screen.dart';
 import 'package:mind_pro/presentation/login/reset_password_screen.dart';
 import 'package:mind_pro/presentation/login_select_screen.dart';
@@ -28,6 +29,7 @@ class MyRouterApp extends StatelessWidget {
         '/login/username': (context) => const LoginUsernameScreen(),
         '/login/reset-password': (context) => const ResetPasswordScreen(),
         '/info/imprint': (context) => const ImprintScreen(),
+        '/info/data-privacy': (context) => const DataPrivacyScreen(),
       },
     );
   }
