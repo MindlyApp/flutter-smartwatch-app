@@ -55,6 +55,8 @@ dependencies:
   http: any
   webview_flutter: ^4.0.2
   url_launcher: ^6.1.8
+  retrofit: '>=4.0.0 <5.0.0'
+  logger: any
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +72,9 @@ dev_dependencies:
 
   build_runner: any
   mockito: ^5.3.2
+
+  retrofit_generator: '>=5.0.0 <6.0.0'
+  json_serializable: ^6.6.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
