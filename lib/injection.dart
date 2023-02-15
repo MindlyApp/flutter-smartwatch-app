@@ -1,5 +1,8 @@
 import 'package:get_it/get_it.dart';
+import 'package:mind_pro/config/remote_config.dart';
 import 'package:mind_pro/domain/usecases/login_usecases.dart';
+import 'package:mind_pro/infrastructure/utils/dio_client.dart';
+import 'package:mind_pro/infrastructure/utils/rest_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +13,10 @@ Future<void> init() async {
 
   // load shared preferences
   await _initSharedPref();
+
+  /// Rest
+  final dio = buildDioClient(RemoteConfig.serverApiUrl);
+  sl.registerLazySingleton<RestClient>(() => RestClient(dio));
 
   /// BLOCS
 

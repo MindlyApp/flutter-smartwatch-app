@@ -30,3 +30,10 @@ flutter pub run flutter_launcher_icons
 
 https://pub.dev/packages/flutter_native_splash
 
+## Build Runner
+
+Shell:
+```shell
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
