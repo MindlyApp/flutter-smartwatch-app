@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mind_pro/presentation/data_privacy_screen.dart';
 import 'package:mind_pro/presentation/imprint_screen.dart';
+import 'package:mind_pro/presentation/login/login_username_screen.dart';
 import 'package:mind_pro/presentation/login/reset_password_screen.dart';
-import 'package:mind_pro/presentation/login_select_screen.dart';
-import 'package:mind_pro/presentation/login_username_screen.dart';
+import 'package:mind_pro/presentation/login/login_select_screen.dart';
 import 'package:mind_pro/presentation/mainmenu/mainmenu.dart';
 import 'package:mind_pro/presentation/splash_screen.dart';
 
