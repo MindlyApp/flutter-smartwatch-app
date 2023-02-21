@@ -175,7 +175,7 @@ class _LoginUsernameScreenState extends State<LoginUsernameScreen> {
                                   ),
                                   TextButton(
                                     style: TextButton.styleFrom(
-                                      textStyle: const TextStyle(fontSize: 10),
+                                      textStyle: const TextStyle(fontSize: 14),
                                     ),
                                     onPressed: () {
                                       Navigator.pushNamed(context, '/login/reset-password');
